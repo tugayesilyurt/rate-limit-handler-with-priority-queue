@@ -10,7 +10,7 @@ Building a Resilient, Priority-Driven Queue System for Rate-Limited APIs using S
 
 ## Read this article on Medium
 
-[Medium Article](https://medium.com/@htyesilyurt/implementing-geospatial-indexing-in-spring-boot-using-redis-geohash-bd7b2b77e4d4)
+[Medium Article](https://medium.com/@htyesilyurt/building-a-resilient-priority-driven-queue-system-for-rate-limited-apis-using-spring-boot-redis-0729d1e56c36)
 
 # Rate-Limit Handler with Priority Queue
 
@@ -34,6 +34,26 @@ This project demonstrates how to build a resilient queue-driven solution for rat
 
 ## Setup:
 
-1. Run Redis and MySQL using Docker:
+1. Run Redis using Docker:
    ```bash
-   docker-compose up -d
+   docker run -d \
+  --name redis-container \
+  -p 6379:6379 \
+  --restart unless-stopped \
+  redis:latest
+
+2. Run MySQL using Docker:
+   ```bash
+   docker run -d \
+  --name mysql-container \
+  -p 3306:3306 \
+  -e MYSQL_ROOT_PASSWORD=rootpassword \
+  -e MYSQL_DATABASE=queue \
+  -e MYSQL_USER=queue \
+  -e MYSQL_PASSWORD=123456 \
+  --restart unless-stopped \
+  mysql:latest
+
+3. Run the application:
+   ```bash
+   mvn spring-boot:run
