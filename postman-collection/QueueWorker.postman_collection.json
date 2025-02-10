@@ -1,0 +1,31 @@
+{
+	"info": {
+		"_postman_id": "1282f1ee-4437-4793-aae8-ee88775ec0fb",
+		"name": "QueueWorker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8163916"
+	},
+	"item": [
+		{
+			"name": "Call Queue Worker Service",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/v1/queue/worker",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"v1",
+						"queue",
+						"worker"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
