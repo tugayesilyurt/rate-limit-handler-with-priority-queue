@@ -36,24 +36,13 @@ This project demonstrates how to build a resilient queue-driven solution for rat
 
 1. Run Redis using Docker:
    ```bash
-   docker run -d \
-  --name redis-container \
-  -p 6379:6379 \
-  --restart unless-stopped \
-  redis:latest
-
+   docker run -d --name redis-container -p 6379:6379 --restart unless-stopped redis:latest
+   ```
 2. Run MySQL using Docker:
    ```bash
-   docker run -d \
-  --name mysql-container \
-  -p 3306:3306 \
-  -e MYSQL_ROOT_PASSWORD=rootpassword \
-  -e MYSQL_DATABASE=queue \
-  -e MYSQL_USER=queue \
-  -e MYSQL_PASSWORD=123456 \
-  --restart unless-stopped \
-  mysql:latest
-
+   docker run -d --name mysql-container -p 3306:3306 -e MYSQL_ROOT_PASSWORD=rootpassword -e MYSQL_DATABASE=queue -e MYSQL_USER=queue -e MYSQL_PASSWORD=123456 --restart unless-stopped mysql:latest
+   ```
 3. Run the application:
    ```bash
    mvn spring-boot:run
+   ```
